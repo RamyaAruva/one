@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>NexusShop — Modern E‑Commerce</title>
+
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+
     <style>
         /* ========== ROOT VARIABLES ========== */
         :root {
@@ -28,10 +30,6 @@
             --shadow-hover: 0 12px 48px rgba(26, 26, 46, 0.10);
             --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             --container: 1240px;
-            /* Olive green for categories */
-            --olive: #6b8e23;
-            --olive-light: #8aa64e;
-            --olive-bg: #f2f6e9;
         }
 
         /* ========== RESET & BASE ========== */
@@ -435,14 +433,14 @@
             color: var(--accent-dark);
         }
 
-        /* ========== CATEGORIES — OLIVE GREEN BACKGROUND ========== */
+        /* ========== CATEGORIES ========== */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 16px;
         }
         .cat-card {
-            background: var(--olive-bg);          /* soft olive background */
+            background: var(--bg-card);
             border-radius: var(--radius);
             padding: 24px 16px;
             text-align: center;
@@ -450,34 +448,31 @@
             transition: var(--transition);
             cursor: pointer;
             border: 2px solid transparent;
-            color: var(--primary);
         }
         .cat-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-hover);
-            border-color: var(--olive);           /* olive border on hover */
-            background: #e8f0d5;                  /* slightly lighter olive on hover */
+            border-color: var(--accent-light);
         }
         .cat-card .icon-wrap {
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: var(--olive);              /* olive green for icon background */
+            background: var(--accent-light);
             display: grid;
             place-items: center;
             margin: 0 auto 12px;
             font-size: 24px;
-            color: #fff;                           /* white icons for contrast */
+            color: var(--accent);
             transition: var(--transition);
         }
         .cat-card:hover .icon-wrap {
-            background: var(--olive-light);        /* lighter olive on hover */
+            background: var(--accent);
             color: #fff;
         }
         .cat-card h4 {
             font-size: 15px;
             font-weight: 600;
-            color: var(--primary);
         }
         .cat-card .count {
             font-size: 13px;
@@ -1147,3 +1142,14 @@
                     <li><a href="#deals"><i class="fas fa-tag"></i> Deals</a></li>
                     <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
                 </ul>
+            </nav>
+
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div class="search-wrap" role="search">
+                    <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search" />
+                    <button id="searchBtn" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn" title="Account" aria-label="Account"><i class="far fa-user"></i></button>
+                    <button class="icon-btn" title="Wishlist" aria-label="Wishlist"><i class="far fa-heart
